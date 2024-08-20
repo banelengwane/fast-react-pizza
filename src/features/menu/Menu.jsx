@@ -3,12 +3,13 @@ import { getMenu } from '../../services/apiRestaurant';
 import MenuItem from './MenuItem'
 
 function Menu() {
-  const menu = useLoaderData()
-  console.log(menu);
+  const menu = useLoaderData();
   
-  return <ul>
-    {menu.map((pizza) => <MenuItem pizza={pizza} key={pizza.id} />)}
-  </ul>
+  return (
+    <ul>
+      {menu.map((pizza) => <MenuItem pizza={pizza} key={pizza.id} />)}
+    </ul>
+  )
 }
 
 export async function loader(){
